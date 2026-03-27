@@ -343,11 +343,11 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.05);padding
 
 
 /* ── PRICING TWO CARDS ── */
-.pricing-two-cards{display:flex;align-items:stretch;justify-content:center;gap:0;width:100%}
+.pricing-two-cards{display:flex;align-items:stretch;justify-content:center;gap:0;width:100%;border-top:3px solid #4ade80;border-radius:18px}
 .pricing-card{background:var(--grad);border-radius:18px;padding:24px 22px;flex:1;min-width:0;box-sizing:border-box;text-align:center;display:flex;flex-direction:column;align-items:center}
 .pricing-card-onetime{border-radius:18px 0 0 18px}
 .pricing-card-monthly{border-radius:0 18px 18px 0}
-.pricing-between-plus{font-size:2.4rem;font-weight:900;color:white;flex-shrink:0;display:flex;align-items:center;justify-content:center;padding:0 18px;align-self:stretch;background:#f9a8d4}
+.pricing-between-plus{font-size:2.4rem;font-weight:900;color:white;flex-shrink:0;display:flex;align-items:center;justify-content:center;padding:0 18px;align-self:stretch;background:rgba(74,222,128,.15)}
 .pricing-checks{list-style:none;margin-top:auto;padding-top:14px;display:flex;flex-direction:column;gap:7px;text-align:left;width:100%}
 .pricing-checks li{font-size:.75rem;color:rgba(255,255,255,.85);display:flex;align-items:flex-start;gap:6px;line-height:1.4}
 .check-icon{font-size:.85rem;flex-shrink:0;margin-top:1px}
@@ -355,10 +355,10 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.05);padding
 .pricing-spacer{height:1.4rem}
 .pricing-pm{font-size:1.2rem;font-weight:600;opacity:.85;vertical-align:baseline}
 @media(max-width:600px){
-  .pricing-two-cards{flex-direction:column;gap:12px;align-items:stretch}
+  .pricing-two-cards{flex-direction:column;gap:0;align-items:stretch;border-top:none;border-left:3px solid #4ade80;border-radius:18px}
   .pricing-card-onetime{border-radius:18px 18px 0 0}
   .pricing-card-monthly{border-radius:0 0 18px 18px}
-  .pricing-between-plus{border-radius:0;padding:12px;font-size:1.5rem;align-self:auto}
+  .pricing-between-plus{border-radius:0;padding:10px;font-size:1.5rem;align-self:auto}
 }
 
 /* ── ORNAMENT DIVIDER ── */
@@ -378,6 +378,20 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.05);padding
 .hubspot-cal-wrap{margin-top:16px;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.08)}
 .meetings-iframe-container{width:100%;min-height:360px}
 .meetings-iframe-container iframe{width:100%;border:none;min-height:360px;display:block}
+
+
+/* ── FREE PREVIEW COLUMN ORDER ── */
+/* Desktop: Call left, Preview right */
+.fp-col-call{order:1}
+.fp-or{order:2}
+.fp-col-preview{order:3}
+@media(max-width:700px){
+  /* Mobile: Preview first, Call second */
+  .fp-three-col{display:flex;flex-direction:column}
+  .fp-col-preview{order:1}
+  .fp-or{order:2}
+  .fp-col-call{order:3}
+}
 
 /* ── FREE PREVIEW THREE COL ── */
 .fp-three-col{display:grid;grid-template-columns:1fr auto 1fr;gap:0;align-items:stretch;max-width:860px;margin:0 auto}
@@ -418,6 +432,7 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.05);padding
   gtag('config', 'G-YN8T57P50R');
 </script>
 
+<script src="https://t.contentsquare.net/uxa/be22adb52e85b.js"></script>
 </head>
 <body>
 <!-- Cursor -->
@@ -703,7 +718,7 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.05);padding
     <div class="fp-three-col reveal">
 
       <!-- LINKS: Free Preview -->
-      <div class="fp-col">
+      <div class="fp-col fp-col-preview">
         <div class="preview-form-card">
           <div class="pf-fields" id="pf-fields">
             <div style="margin-bottom:18px">
@@ -750,7 +765,7 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.05);padding
       </div>
 
       <!-- RECHTS: Free Call -->
-      <div class="fp-col">
+      <div class="fp-col fp-col-call">
         <div class="call-visual-card" style="height:100%;display:flex;flex-direction:column">
           <div style="margin-bottom:18px">
             <h2 style="font-family:'Playfair Display',serif;font-weight:900;color:var(--text);line-height:1.1">Get A<br><span class="grad">Free Call</span></h2>
